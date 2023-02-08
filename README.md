@@ -1,4 +1,4 @@
-# BayesNetCreacion Library  
+# BayesNetCreacion Library V0.01
 This library has the objective of building Bayesian networks and making probabilistic inference over them. Also, adding some other additional services that could serve the developers that make use of this library. This library is as of yet a WIP.
 
 ### Services
