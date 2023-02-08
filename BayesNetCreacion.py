@@ -1,6 +1,6 @@
 # Base
 
-class BayesNetCreacion():
+class BayesNetCreacion(): #Main class
     def __init__(self):
         pass
 
@@ -14,14 +14,14 @@ class Node():
 
 #Additional services
 
-def descriptiveCheck():
+def descriptiveCheck(net): #Returns if network is completely described (boolean)
     pass
 
-def compact():
+def compact(net): # Returns a compact representation of the network
     pass
 
-def getFactors():
+def getFactors(net): #Returns factors of the network (dict)
     pass
 
-def getEnum():
+def getEnum(net, query): #Returns enumeration of the network according to the query inputted
     pass
