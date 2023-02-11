@@ -5,13 +5,13 @@ class BayesNetCreacion():
         self.cpd = {}
     
     def add_node(self, node):
-        self.cpd[str(node)] = node.probs
+        self.cpd[str(node)] = node.get_probs()
     
     def __str__(self) -> str:
         print(self.network)
 
     def set_cpd(self, relation, probs): # name|name2, name3, etc..., / {probs}
-        self.cpd[relation] = probs
+        self.cpd[relation] = probs.get_probs()
 
     def probabilistic_inference(self, target, observed):
         pass
@@ -34,6 +34,7 @@ class Node():
     
     def set_probs(self, probs): #{0: value, 1: value} false / true
         self.probs = probs
+        print(self.probs)
     
     def get_probs(self):
         return self.probs
