@@ -2,19 +2,13 @@
 class BayesNetCreacion():
     def __init__(self):
         self.network = {}
-        self.cpd = {}
     
     def add_node(self, node):
-        self.cpd[str(node)] = node.get_probs()
+        self.network[str(node)] = node.get_info()
     
-    def __str__(self) -> str:
-        print(self.network)
+    def get_network(self):
+        return self.network
 
-    def set_cpd(self, relation, probs): # name|name2, name3, etc..., / {probs}
-        self.cpd[relation] = probs.get_probs()
-
-    def probabilistic_inference(self, target, observed):
-        pass
 
 #Creation of each probabilistic node that will form the network
 class Node():
@@ -22,6 +16,7 @@ class Node():
         self.name = name
         self.parents = [] 
         self.probs = {}
+        self.cpds = {}
     
     def __str__(self):
         return self.name
@@ -32,12 +27,24 @@ class Node():
     def get_parents(self):
         return self.parents
     
-    def set_probs(self, probs): #{0: value, 1: value} false / true
+    def set_probs(self, probs): #{False: value, True: value} 
         self.probs = probs
-        print(self.probs)
     
     def get_probs(self):
         return self.probs
+
+    def set_cpds(self, cpds):
+        self.cpds = cpds
+    
+    def get_cpds(self):
+        return self.cpds
+    
+    def get_info(self):
+        return {
+            'parents': self.get_parents(),
+            'values': self.get_probs(),
+            'cpds': self.get_cpds()
+        }
     
     
 
