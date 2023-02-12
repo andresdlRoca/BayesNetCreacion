@@ -9,6 +9,27 @@ class BayesNetCreacion():
     def get_network(self):
         return self.network
 
+    def probabilistic_inference(self, observed, target):
+        evidence = self.getEnum(observed, {})
+        prob_target = self.getEnum(target, observed)
+        result = prob_target/evidence
+        return result
+
+    #Additional services
+
+    def descriptiveCheck(self): #Returns if network is completely described (boolean)
+        pass
+
+    def compact(self): # Returns a compact representation of the network
+        pass
+
+    def getFactors(self): #Returns factors of the network (dict)
+        pass
+
+    def getEnum(self, observed, target): #Returns enumeration of the network according to the query inputted
+        enumThis = {**observed, **target}
+        variable = observed.pop()
+        
 
 #Creation of each probabilistic node that will form the network
 class Node():
@@ -48,16 +69,3 @@ class Node():
     
     
 
-#Additional services
-
-def descriptiveCheck(net): #Returns if network is completely described (boolean)
-    pass
-
-def compact(net): # Returns a compact representation of the network
-    pass
-
-def getFactors(net): #Returns factors of the network (dict)
-    pass
-
-def getEnum(net, query): #Returns enumeration of the network according to the query inputted
-    pass
