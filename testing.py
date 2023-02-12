@@ -1,19 +1,26 @@
 from BayesNetCreacion import BayesNetCreacion, Node
 
 bnc = BayesNetCreacion()
-burglar = Node("Burglar")
+burglary = Node("Burglary")
 earthquake = Node("Earthquake")
 alarm = Node("Alarm")
+johncalls = Node("JohnCalls")
+marycalls = Node("MaryCalls")
 
-burglar.set_probs({0: 0.999, 1: 0.001})
+
+burglary.set_probs({0: 0.999, 1: 0.001})
 earthquake.set_probs({0: 0.998, 1:0.002})
-alarm.set_parents([str(burglar), str(earthquake)])
-alarm.set_cpds({(False, False, False): 0.999, (False, False, True): 0.001, (False, True, False): 0.29, (False, True, True): 0.71, (True, False, False): 0.06, (True, False, True): 0.94, (True, True, False): 0.05, (True, True, True): 0.95})
+alarm.set_parents([str(burglary), str(earthquake)])
+alarm.set_cpds({(0, 0, 0): 0.999, (0, 0, 1): 0.001, (0, 1, 0): 0.29, (0, 1, 1): 0.71, (1, 0, 0): 0.06, (1, 0, 1): 0.94, (1, 1, 0): 0.05, (1, 1, 1): 0.95})
+johncalls.set_parents(str(alarm))
+marycalls.set_parents(str(alarm))
+johncalls.set_cpds({(1,0): 0.05, (1,1):0.90, (0,1):0.70, (0,0):0.01})
 
-bnc.add_node(burglar)
+bnc.add_node(burglary)
 bnc.add_node(earthquake)
 bnc.add_node(alarm)
+bnc.add_node(johncalls)
+bnc.add_node(marycalls)
 
 print(bnc.get_network())
 
-print("Hi Mom!")

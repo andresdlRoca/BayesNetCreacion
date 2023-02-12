@@ -1,3 +1,5 @@
+import itertools
+
 # Base
 class BayesNetCreacion():
     def __init__(self):
@@ -9,11 +11,8 @@ class BayesNetCreacion():
     def get_network(self):
         return self.network
 
-    def probabilistic_inference(self, observed, target):
-        evidence = self.getEnum(observed, {})
-        prob_target = self.getEnum(target, observed)
-        result = prob_target/evidence
-        return result
+    def probabilistic_inference(self):
+        pass
 
     #Additional services
 
@@ -27,9 +26,7 @@ class BayesNetCreacion():
         pass
 
     def getEnum(self, observed, target): #Returns enumeration of the network according to the query inputted
-        enumThis = {**observed, **target}
-        variable = observed.pop()
-        
+        pass
 
 #Creation of each probabilistic node that will form the network
 class Node():
