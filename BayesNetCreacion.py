@@ -53,7 +53,7 @@ class BayesNetCreacion():
     def compact(self): # Returns a compact representation of the network
         pass
 
-    def getFactors(self): #Returns factors of the network (dict)
+    def get_factors(self): #Returns factors of the network (dict)
         return self.cpt
 
     def enum_ask(self, X, e): 

@@ -52,7 +52,9 @@ print(result) #0.28417
 
 #Representacion compacta
 
+
 #Factores
+print(bnc.get_factors()) #Outputs Conditional Probability Table
 
 #Esta descrita?
 
