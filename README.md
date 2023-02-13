@@ -4,7 +4,7 @@ This library has zero dependencies to assure it is futureproof, easier to debug,
 For the most part this library works over classes like BayesNetCreacion and Node, this was chosen so that in a way it could facilitate the usage of the OOP paradigm.
 
 
-For further inquiries you about the usage of the library you can consult [Usage](#usage) section of this repo or the [testing](testing.py) python file to see the Burglar Alarm System example being used.
+For further inquiries you about the usage of the library you can consult [Usage](#usage) section of this repo or the [testing](/BayesNetCreacion/testing.pytesting.py) python file to see the Burglar Alarm System example being used.
 
 ### Features
 
