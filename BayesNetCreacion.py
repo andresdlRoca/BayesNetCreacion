@@ -1,6 +1,11 @@
 # Base
 class BayesNetCreacion():
     def __init__(self):
+        """
+        variables: List, Saves all the variables added to the network
+        parents: Dict, Saves all the parents of the variables added
+        cpt: Dict, contains alll the probabilities of the variables in the network
+        """
         self.variables = ()
         self.parents = {}
         self.cpt = {}
@@ -46,6 +51,8 @@ class BayesNetCreacion():
         return self.cpt[key]
 
     #Additional services
+
+    
 
     def get_factors(self): #Returns factors of the network (dict)
         return self.cpt
