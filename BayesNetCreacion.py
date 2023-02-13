@@ -2,23 +2,24 @@
 class BayesNetCreacion():
     def __init__(self):
         """
-        variables: List, Saves all the variables added to the network
-        parents: Dict, Saves all the parents of the variables added
-        cpt: Dict, contains alll the probabilities of the variables in the network
+        Class variables:
+        :variables: List, Saves all the variables added to the network
+        :parents: Dict, Saves all the parents of the variables added
+        :cpt: Dict, contains alll the probabilities of the variables in the network
         """
         self.variables = ()
         self.parents = {}
         self.cpt = {}
     
-    def add_node(self, node):
+    def add_node(self, node): #Adds node object to the network
         query = {str(node): node.get_parents()}
         self.parents.update(query)
         self.variables += tuple(query.keys())
     
-    def add_prob(self, prob):
+    def add_prob(self, prob): #Adds a probability or cpt to the network
         self.cpt.update(prob)
     
-    def get_network(self):
+    def get_network(self): #Returns a dict containing the network values
         return {
             'variables': self.variables,
             'parents': self.parents,
@@ -29,8 +30,8 @@ class BayesNetCreacion():
         """
         Calculate the probability of the query given the evidence inputted
 
-        :param query: the variable to calculate the prob for
-        :param evidence: the evidence, given a dictionary with their values
+        :param: query: the variable to calculate the prob for
+        :param: evidence: the evidence, given a dictionary with their values
         :return: the probability of the query happening given the evidence
         """
         result = self.pre_enum(query, evidence)
@@ -52,7 +53,7 @@ class BayesNetCreacion():
 
     #Additional services
 
-    
+
 
     def get_factors(self): #Returns factors of the network (dict)
         return self.cpt
@@ -64,7 +65,7 @@ class BayesNetCreacion():
             QX[xi] = self.get_enum(self.variables, e)
         return self.normalize(QX)
     
-    def get_enum(self, variables, e):
+    def get_enum(self, variables, e): #Returns numeration value(s)
         if not variables:
             return 1
         Y, rest = variables[0], variables[1:]
@@ -79,7 +80,7 @@ class BayesNetCreacion():
         e2[var] = val
         return e2
 
-    def normalize(self, QX):
+    def normalize(self, QX): #Returns the normalized numeration value
         total = sum(QX.values())
         for key in QX:
             QX[key] /= total
@@ -89,6 +90,11 @@ class BayesNetCreacion():
 #Creation of each probabilistic node that will form the network
 class Node():
     def __init__(self, name):
+        """
+        Class variables:
+        :name: String, contains the name which identifies the node created.
+        :parents: String list, contains the names of the parents of the node, is empty if node doesnt have parents.
+        """
         self.name = name
         self.parents = [] 
     

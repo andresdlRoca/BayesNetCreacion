@@ -2,6 +2,8 @@ from BayesNetCreacion import BayesNetCreacion, Node
 
 #Burglar Alarm System example 
 #Reference: https://www.youtube.com/watch?v=hEZjPZ-Ze0A&t=35s
+
+#Creating nodes and network
 burglary = Node('B')
 earthquake = Node('E')
 alarm = Node('A')
@@ -44,6 +46,7 @@ bnc.add_prob({
 
 # print(bnc.get_network())
 
+#Functions
 #Probabilistic Inference
 evidence = {'J': True, 'M': True}
 query = 'B'
@@ -51,6 +54,7 @@ result = bnc.probabilistic_inference(query, evidence)
 print(result) #0.28417
 
 #Compact
+
 
 #Factores
 print(bnc.get_factors()) #Outputs Conditional Probability Table
