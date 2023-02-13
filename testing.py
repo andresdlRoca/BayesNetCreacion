@@ -44,21 +44,22 @@ bnc.add_prob({
 
 print(bnc.get_network())
 
-#Inferencia probabilistic
+#Probabilistic Inference
 evidence = {'J': True, 'M': True}
 query = 'B'
 result = bnc.probabilistic_inference(query, evidence)
 print(result) #0.28417
 
-#Representacion compacta
+#Compact
 
 
 #Factores
 print(bnc.get_factors()) #Outputs Conditional Probability Table
 
-#Esta descrita?
+#Defined?
 
-#Enumeracion
+
+#Enumeration
 evidence = {'B': True, 'E':False}
 query = 'A'
 result = bnc.enum_ask(query, evidence)

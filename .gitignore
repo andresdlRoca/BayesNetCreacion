@@ -2,3 +2,4 @@
 *.rar
 *.pdf
 test.py
+__pycache__/
