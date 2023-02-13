@@ -19,6 +19,11 @@ For further inquiries you about the usage of the library you can consult [Usage]
 ### Prerequisites
 - Python 3.10.^
 
+### Install
+```bash
+pip install BayesNetCreacion
+```
+
 ### Usage
 ```python
 from BayesNetCreacion import BayesNetCreacion, Node #Import the library
