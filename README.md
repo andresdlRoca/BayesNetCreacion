@@ -20,7 +20,7 @@ For further inquiries you about the usage of the library you can consult [Usage]
 - Python 3.10.^
 
 ### Usage
-```
+```python
 from BayesNetCreacion import BayesNetCreacion, Node #Import the library
 
 examplenode = Node('E') #Create a Node object
