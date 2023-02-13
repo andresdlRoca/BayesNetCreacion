@@ -42,7 +42,7 @@ bnc.add_prob({
     ('M', False, 'A', False): 0.99,
 })
 
-print(bnc.get_network())
+# print(bnc.get_network())
 
 #Probabilistic Inference
 evidence = {'J': True, 'M': True}
@@ -52,15 +52,14 @@ print(result) #0.28417
 
 #Compact
 
-
 #Factores
 print(bnc.get_factors()) #Outputs Conditional Probability Table
 
-#Defined?
+#Definition check
 
 
 #Enumeration
 evidence = {'B': True, 'E':False}
 query = 'A'
-result = bnc.enum_ask(query, evidence)
+result = bnc.pre_enum(query, evidence)
 print(result) #{True: 0.94, False: 0.06}

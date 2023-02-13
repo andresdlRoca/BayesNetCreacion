@@ -28,7 +28,7 @@ class BayesNetCreacion():
         :param evidence: the evidence, given a dictionary with their values
         :return: the probability of the query happening given the evidence
         """
-        result = self.enum_ask(query, evidence)
+        result = self.pre_enum(query, evidence)
         return result[True]
 
     def P(self, var, e):
@@ -47,30 +47,24 @@ class BayesNetCreacion():
 
     #Additional services
 
-    def descriptiveCheck(self): #Returns if network is completely described (boolean)
-        pass
-
-    def compact(self): # Returns a compact representation of the network
-        pass
-
     def get_factors(self): #Returns factors of the network (dict)
         return self.cpt
 
-    def enum_ask(self, X, e): 
+    def pre_enum(self, X, e): 
         QX = {}
         for xi in [True, False]:
             e[X] = xi
-            QX[xi] = self.enum_all(self.variables, e)
+            QX[xi] = self.get_enum(self.variables, e)
         return self.normalize(QX)
     
-    def enum_all(self, variables, e):
+    def get_enum(self, variables, e):
         if not variables:
             return 1
         Y, rest = variables[0], variables[1:]
         if Y in e:
-            return self.P(Y, e) * self.enum_all(rest, e)
+            return self.P(Y, e) * self.get_enum(rest, e)
         else:
-            return sum(self.P(Y, self.extend(e, Y ,yi))* self.enum_all(rest, self.extend(e, Y, yi))
+            return sum(self.P(Y, self.extend(e, Y ,yi))* self.get_enum(rest, self.extend(e, Y, yi))
                         for yi in [True, False])
 
     def extend(self, e, var, val):
