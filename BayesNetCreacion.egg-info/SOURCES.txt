@@ -1,7 +1,7 @@
 README.md
 setup.py
-BayesNetCreacion/BayesNetCreacion.py
 BayesNetCreacion/__init__.py
+BayesNetCreacion/bayesnetc.py
 BayesNetCreacion/test.py
 BayesNetCreacion/testing.py
 BayesNetCreacion.egg-info/PKG-INFO

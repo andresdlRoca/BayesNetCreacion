@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: BayesNetCreacion
-Version: 1.0.0
+Version: 1.1.0
 Summary: Library capable of creating Bayesian Networks and making probabilistic inference over them, as well additional functions
 Author: Andres de la Roca
 Author-email: <dela20332@uvg.edu.gt>
