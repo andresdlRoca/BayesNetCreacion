@@ -7,7 +7,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '1.1.0'
+VERSION = '1.1.6'
 DESCRIPTION = 'Library capable of creating Bayesian Networks and making probabilistic inference over them, as well additional functions'
 LONG_DESCRIPTION = 'This library has the objective of building Bayesian networks and making probabilistic inference over them. Also, adding some other additional features that could serve the developers that make use of this library. This library has zero dependencies to assure it is futureproof, easier to debug, to contribute to and use. For the most part this library works over classes like BayesNetCreacion and Node, this was chosen so that in a way it could facilitate the usage of the OOP paradigm.'
 

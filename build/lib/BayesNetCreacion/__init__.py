@@ -1,1 +1,1 @@
-from bayesnetc import BayesNetCreacion, Node
+from BayesNetCreacion.bayesnetc import BayesNetCreacion, Node

@@ -1,4 +1,4 @@
-# BayesNetCreacion Library
+# BayesNetCreacion
 This library has the objective of building Bayesian networks and making probabilistic inference over them. Also, adding some other additional features that could serve the developers that make use of this library.  
 This library has zero dependencies to assure it is futureproof, easier to debug, to contribute to and use.  
 For the most part this library works over classes like BayesNetCreacion and Node, this was chosen so that in a way it could facilitate the usage of the OOP paradigm.
