@@ -52,7 +52,39 @@ class BayesNetCreacion():
         return self.cpt[key]
 
     #Additional services
+    def defined_check(self): #Returns if network is completely defined (boolean)
+        try:
+            if not self.variables:
+                return 1
+            Y, rest = self.variables[0], self.variables[1:]
+            if Y in {}:
+                self.P(Y, {}) * self.get_enum(rest, {})
+            else:
+                sum(self.P(Y, self.extend({}, Y ,yi))* self.get_enum(rest, self.extend({}, Y, yi))
+                            for yi in [True, False])
+            print("\nThe network is defined")
+            return True
+        except:
+            print("\nThe network is not defined")
+            return False
 
+    def get_compact(self): # Returns a compact representation of the network
+        bn = self.get_network()
+        buffer = ''
+        for i in bn['parents']: #Loops for every variable in the network
+            buffer += 'P(' + str(i)
+            if bn['parents'][i]: #Checks if the variable has a parent
+                buffer += '|'
+                for z in bn['parents'][i]: #For every parent add their dependency
+                    buffer += z
+                    buffer += ','
+                buffer = buffer[:-1] #Gets rid of last comma inside dependencies
+                buffer+= "), "                 
+            else:
+                buffer += '), '
+        buffer = buffer[:-2] #Gets rid of last comma and whitespace
+            
+        return buffer
 
 
     def get_factors(self): #Returns factors of the network (dict)

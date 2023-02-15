@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: BayesNetCreacion
-Version: 1.1.6
+Version: 1.2.0
 Summary: Library capable of creating Bayesian Networks and making probabilistic inference over them, as well additional functions
 Author: Andres de la Roca
 Author-email: <dela20332@uvg.edu.gt>
@@ -31,6 +31,11 @@ For further inquiries you about the usage of the library you can consult [Usage]
 
 ### Prerequisites
 - Python 3.10.^
+
+### Install
+```bash
+pip install BayesNetCreacion
+```
 
 ### Usage
 ```python
