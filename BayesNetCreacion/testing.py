@@ -53,14 +53,14 @@ query = 'B'
 result = bnc.probabilistic_inference(query, evidence)
 print(result) #0.28417
 
-#Compact
-
+#Compact check 
+print(bnc.get_compact()) #P(B), P(E), P(A|B,E), P(J|A), P(M|A)
 
 #Factores
 print(bnc.get_factors()) #Outputs Conditional Probability Table
 
 #Definition check
-
+print(bnc.defined_check())
 
 #Enumeration
 evidence = {'B': True, 'E':False}
