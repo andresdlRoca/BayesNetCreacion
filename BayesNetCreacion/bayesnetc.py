@@ -51,8 +51,13 @@ class BayesNetCreacion():
             key += tuple([e[p]])
         return self.cpt[key]
 
-    #Additional services
-    def defined_check(self): #Returns if network is completely defined (boolean)
+
+    # Additional services
+    def defined_check(self):
+        """
+        Returns if network is completely defined (boolean)
+        """
+        
         try:
             if not self.variables:
                 return 1
